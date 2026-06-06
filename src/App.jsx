@@ -1,14 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import "./App.css";
+
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+
+import Login from "./pages/Login/Login";
 
 function App() {
-  
+  return (
+    <div className="app">
+      <Header />
 
-  return 
-  // HTML
+      <main className="content">
+        <Login />
+      </main>
+
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
