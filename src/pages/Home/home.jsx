@@ -1,4 +1,5 @@
 import CardHorizontal from "../../componets/Card/cardHorizontal";
+import CardVertical from "../../componets/Card/CardVertical";
 import Carousel from "../../componets/Carousel/Carousel";
 import DivisaoTitulo from "../../componets/DivisaoTitulo/DivisaoTitulo"
 import styles from "./Home.module.css";
@@ -27,6 +28,17 @@ function Home() {
       </div>
 
       <DivisaoTitulo titulo="Categorias"/>
+
+      <div className={styles.cardContainer2}>
+
+        <CardVertical></CardVertical>
+        <CardVertical></CardVertical>
+        <CardVertical></CardVertical>
+        <CardVertical></CardVertical>
+        <CardVertical></CardVertical>
+
+      </div>
+
 
     </>
   );
