@@ -1,7 +1,7 @@
-import CardHorizontal from "../../componets/Card/cardHorizontal";
-import CardVertical from "../../componets/Card/CardVertical";
-import Carousel from "../../componets/Carousel/Carousel";
-import DivisaoTitulo from "../../componets/DivisaoTitulo/DivisaoTitulo"
+import CardHorizontal from "../../components/Card/cardHorizontal";
+import CardVertical from "../../components/Card/CardVertical";
+import Carousel from "../../components/Carousel/Carousel";
+import DivisaoTitulo from "../../components/DivisaoTitulo/DivisaoTitulo"
 import styles from "./Home.module.css";
 
 
