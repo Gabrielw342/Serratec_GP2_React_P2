@@ -12,22 +12,22 @@ function Carousel(){
     useEffect(() => {
         
     const intervalo = setInterval(() => {
-         
+
     setPosicoes((anterior) => {
 
-      const novaLista = [...anterior];
+        const novaLista = [...anterior];
 
-      const ultima = novaLista.pop();
+        const ultima = novaLista.pop();
 
-      novaLista.unshift(ultima);
+        novaLista.unshift(ultima);
 
-      return novaLista;
+        return novaLista;
 
     });
 
     }, 7000);
 
-  return () => clearInterval(intervalo);
+    return () => clearInterval(intervalo);
 
 }, []);
     
