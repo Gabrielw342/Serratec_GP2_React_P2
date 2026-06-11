@@ -126,6 +126,13 @@ function LoginForm() {
           >
               Entrar
              </button>
+
+             <p className={styles.cadastroLink}>
+  Sem conta?{" "}
+  <span>
+    Criar aqui
+  </span>
+</p>
         </form>
       </div>
     </div>

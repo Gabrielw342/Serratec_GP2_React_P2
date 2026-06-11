@@ -173,25 +173,3 @@
 
   font-weight: bold;
 }
-
-.cadastroLink {
-  text-align: center;
-
-  margin-top: 15px;
-
-  font-size: 14px;
-}
-
-.cadastroLink span {
-  color: #F9F5E6;
-
-  font-weight: bold;
-
-  cursor: pointer;
-
-  text-decoration: underline;
-}
-
-.cadastroLink span:hover {
-  opacity: 0.8;
-}
