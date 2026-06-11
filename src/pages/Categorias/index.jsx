@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 
 export const Categorias = () => {
 
-
+    const getImagem = (nomeArquivo) => {
+        return new URL(`../../assets/${nomeArquivo}`, import.meta.url).href;
+    };
 
     return <div className={styles.categoriaspage}>
 
         <div className={styles.bannerCategorias}>
-            <img src={'BannerCategorias.png'} alt="Mesa_Cheia_de_Comida"/>
+            <img src={getImagem('BannerCategorias.png')}
+             alt="Mesa_Cheia_de_Comida"/>
         </div>
 
         <div className={styles.tituloCategorias}>
@@ -19,23 +22,21 @@ export const Categorias = () => {
         <section className={styles.listaCategorias}>
             
             {/* <Link to="/pages/listagem" state={{tipoCategoria: salgado}}>*/}
-                <CategoriasCard 
-                    src='./carnes.png'
+                <CategoriasCard src={getImagem('arrozFeijão.png')}
                     alt='Picanha'
                     nomeCategoria="Salgado"
-                    cor="#c15700"/>
+                    cor="#7c65f3"/>
             {/* </Link> */}
             
             {/* <Link to="/pages/listagem" state={{tipoCategoria: agridoce}}>*/}
-                <CategoriasCard src='./vegana.png'
+                <CategoriasCard src={getImagem('vegana.png')}
                     alt='Salada'
                     nomeCategoria="Agridoce"
                     cor="#0fd230"/>
             {/* </Link> */}
 
             {/* <Link to="/pages/listagem" state={{tipoCategoria: doce}}>*/}
-                <CategoriasCard 
-                    src='./bolo.png'
+                <CategoriasCard src={getImagem('bolo.png')}
                     alt='Bolo de Chocolate'
                     nomeCategoria="Doce"
                     cor="#33b5fb"
@@ -45,46 +46,67 @@ export const Categorias = () => {
             {/* ----- BUSCA! ----- */}
 
             {/* <Link to="/pages/listagem" state={{tipoCategoria: frango}}>*/}
-                <CategoriasCard src='./coxadefrango.png'
+                <CategoriasCard src={getImagem('coxadefrango.png')}
                     alt='Prato Com Frango'
                     nomeCategoria="Carne de Frango"
-                    cor="#fa2e2e"/>
+                    cor="#f63c3c"/>
             {/* </Link> */}
             
             {/* <Link to="/pages/listagem" state={{tipoCategoria: sushi}}>*/}
-                <CategoriasCard src='./sushi.png'
+                <CategoriasCard src={getImagem('sushi.png')}
                     alt='Sushis'
-                    nomeCategoria="Frutos do Mar"
+                    nomeCategoria="Sushi"
                     cor="#ff701e"/>
             {/* </Link> */}
 
-            {/* <Link to="/pages/listagem" state={{tipoCategoria: Feijoada}}>*/}       
-                <CategoriasCard src='./diversos.png'
+            {/* <Link to="/pages/listagem" state={{tipoCategoria: feijoada}}>*/}       
+                <CategoriasCard src={getImagem('diversos.png')}
                     alt='Feijoada'
                     nomeCategoria="Feijoadas"
                     cor="#b77a59"/>
             {/* </Link> */}
 
-{/*   
-            <CategoriasCard src='./macarraoCategorias.jpg'
-            alt='Prato de macarrão'
-            nomeCategoria="Massas"
-            cor="#fec457"/>
+            {/* <Link to="/pages/listagem" state={{tipoCategoria: risotto}}>*/}
+                <CategoriasCard src={getImagem('risotto.png')}
+                    alt='Risottos'
+                    nomeCategoria="Risotos"
+                    cor="#fec457"/>
+            {/* </Link> */}
 
-            <CategoriasCard src='./saudavel.png'
-            alt='comidaSaudavel'
-            nomeCategoria="Vegetariano"
-            cor="#10a729"/>
+            {/* <Link to="/pages/listagem" state={{tipoCategoria: pimenta}}>*/}
+                <CategoriasCard src={getImagem('picante.png')}
+                    alt='Caldo Apimentado'
+                    nomeCategoria="Picantes"
+                    cor="#ff5050"/>
+            {/* </Link> */}
 
-            <CategoriasCard src='./acompanhamento.png'
-            alt='Prato de Acompanhamento'
-            nomeCategoria="Acompanhamentos"
-            cor="#fd96f3"/>
+            {/* <Link to="/pages/listagem" state={{tipoCategoria: queijo}}>*/}
+                <CategoriasCard src={getImagem('bolinhaQueijo.png')}
+                    alt='Bolinha de Queijo temperada'
+                    nomeCategoria="Queijos"
+                    cor="#e8ff1b"/>
+            {/* </Link> */}
+            
+            {/* <Link to="/pages/listagem" state={{tipoCategoria: pescado}}>*/}
+                <CategoriasCard src={getImagem('pescado.png')}
+                    alt='Pescado'
+                    nomeCategoria="Pescados"
+                    cor="#10a729"/>
+            {/* </Link> */}
 
-            <CategoriasCard src='./espetinhos.png'
-            alt='Amedoins Doce'
-            nomeCategoria="Entrada"
-            cor="#ff5050"/> */}
+            {/* <Link to="/pages/listagem" state={{tipoCategoria: pescado}}>*/}
+                <CategoriasCard src={getImagem('ceviche.png')}
+                    alt='Ceviche'
+                    nomeCategoria="Ceviches"
+                    cor="#fd96f3"/>
+            {/* </Link> */}
+
+            {/* <Link to="/pages/listagem" state={{tipoCategoria: pescado}}>*/}
+                <CategoriasCard src={getImagem('bisteca.png')}
+                    alt='Carne Bisteca'
+                    nomeCategoria="Bistecas"
+                    cor="#e4a94f"/>
+            {/* </Link> */}
 
         </section>
     </div>
