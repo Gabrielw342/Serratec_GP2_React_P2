@@ -22,7 +22,6 @@ function Carousel(){
       novaLista.unshift(ultima);
 
       return novaLista;
-
     });
 
     }, 7000);
