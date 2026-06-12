@@ -1,0 +1,36 @@
+.informacoes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.imagem {
+    width: 100%;
+}
+
+.imagem img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.detalhes {
+    color: white;
+}
+
+.detalhes h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.detalhes p {
+    margin-bottom: .7rem;
+    font-size: 1.1rem;
+}
+
+.detalhes strong {
+    color: #d7e8db;
+}

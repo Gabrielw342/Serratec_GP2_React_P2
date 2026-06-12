@@ -1,0 +1,46 @@
+
+.carousel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 1200px;
+  max-width: 100%;
+  height: 380px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+
+  width: 600px;
+  height: 340px;
+
+  transition: transform 3s ease-in-out, opacity 4s ease-in-out;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.esquerda {
+  transform: translateX(-290px) scale(0.99);
+  opacity: 0.6;
+}
+
+.centro {
+  transform: translateX(0) scale(1.05);
+  opacity: 1;
+  z-index: 3;
+}
+
+.direita {
+  transform: translateX(290px) scale(0.99);
+  opacity: 0.6;
+}

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+.page{
+    background-color: #F9F5E6;
+}
+
+.receita{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #2D4C39;
+    width: 100%;
+    max-width: 1313px;
+    margin: 3rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: 'Outfit', sans-serif;
+}
+
+.informacoes{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 2rem;
+}
+
+.instrucoes{
+    flex: 6;
+    gap: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
