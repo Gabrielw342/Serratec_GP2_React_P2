@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
@@ -8,6 +7,7 @@ import Cadastro from "./Pages/Cadastro/Cadastro";
 import Favoritos from "./Pages/Favoritos/favoritos";
 import ReceitaDetails from "./Pages/ReceitaEspecifica/ReceitaEspecifica"
 import { Routes, Route } from "react-router-dom";
+import Categorias from "./Pages/Categorias/categorias";
 
 function App() {
   return (
@@ -18,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/categoria" element={<Categorias />} />
           <Route path="/favoritos" element={<Favoritos />} />
           <Route path="/receita/:id" element={<ReceitaDetails />} />
         </Routes>

@@ -51,10 +51,6 @@
   transition: 0.3s;
 }
 
-.star:hover {
-  transform: scale(1.15);
-}
-
 .avatarContainer {
   display: flex;
   align-items: center;

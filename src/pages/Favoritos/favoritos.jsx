@@ -1,6 +1,7 @@
 import "./Favoritos.css";
 import ItemFavorito from "../../components/itemFavorito/itemFavorito";
 import boloBolo from "../../assets/bolo_bolo.png";
+import DivisaoTitulo from "../../components/DivisaoTitulo/DivisaoTitulo";
 
 const receitas = [
   { id: 1, title: "Bolo de bolo", image: boloBolo },
@@ -17,7 +18,7 @@ export default function Favoritos() {
   return (
     <div className="favoritos-page">
       <main className="favoritos-main">
-        <h2 className="favoritos-heading">Favoritos</h2>
+        <DivisaoTitulo titulo="Favoritos"/>
         <div className="favoritos-grid">
           {receitas.map((receita) => (
             <ItemFavorito

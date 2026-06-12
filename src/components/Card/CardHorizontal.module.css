@@ -21,7 +21,7 @@
     transform: translateY(-6px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
-  img {
+  .card img {
     width: 220px;
     height: 140px;
     margin: 10px;
