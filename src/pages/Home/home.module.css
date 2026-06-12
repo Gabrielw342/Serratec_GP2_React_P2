@@ -51,7 +51,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 40px;
+  column-gap: 60px;
   row-gap: 30px;
   margin: 0  auto;
   padding: 20px;
