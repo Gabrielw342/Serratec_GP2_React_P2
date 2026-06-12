@@ -1,12 +1,14 @@
 import './App.css'
-import {ReceitaDetails} from './Pages/Receita_Específica/index'
+import Home from "./pages/Home/Home";
+
 
 function App() {
   return (
     <>
-      <ReceitaDetails />
+      <Home />
+      
     </>
-  )
+  );
 }
 
-export default App
+export default App;
