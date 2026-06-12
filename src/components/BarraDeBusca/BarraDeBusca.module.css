@@ -1,0 +1,51 @@
+.searchWrapper {
+  display: flex;
+
+  align-items: center;
+}
+
+.searchButton {
+  width: 28px;
+
+  height: 28px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background-color: #ff6b00;
+
+  color: white;
+
+  cursor: pointer;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-right: 6px;
+
+  transition: 0.3s;
+}
+
+.searchButton:hover {
+  transform: scale(1.05);
+}
+
+.search {
+  width: 250px;
+
+  height: 32px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  outline: none;
+
+  padding: 0 15px;
+
+  font-size: 14px;
+}
