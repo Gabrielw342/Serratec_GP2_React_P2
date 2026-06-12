@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from './styles.module.css';
+import styles from './ReceitaEspecifica.module.css';
 import { ListaIngredientes } from "../../components/ListaIngredientes";
 import { ReceitaInfo } from "../../components/ReceitaInfo";
 import { ModoPreparo } from "../../components/ModoPreparo";
@@ -67,3 +67,5 @@ return <div className={styles.receita}>
                 </div>
     </div>
 };
+
+export default ReceitaDetails;

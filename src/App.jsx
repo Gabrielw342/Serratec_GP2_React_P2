@@ -1,29 +1,25 @@
-import { useState } from 'react'
-import './App.css'
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Favoritos from './pages/Favoritos/favoritos'
+import "./App.css";
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
+import Home from "./Pages/Home/home";
+import Login from "./Pages/login/Login";
+import Cadastro from "./Pages/Cadastro/Cadastro";
+import Favoritos from "./Pages/Favoritos/favoritos";
+import ReceitaDetails from "./Pages/ReceitaEspecifica/ReceitaEspecifica"
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [pagina, setPagina] = useState('home')
-
   return (
     <div className="app">
       <Header />
       <main className="content">
-        {pagina === 'favoritos' ? (
-          <Favoritos />
-        ) : (
-          <>
-            <Login />
-            <Home />
-            <button onClick={() => setPagina('favoritos')}>
-              Ver Favoritos
-            </button>
-          </>
-        )}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/cadastro" element={<Cadastro />} />
+          <Route path="/favoritos" element={<Favoritos />} />
+          <Route path="/receita/:id" element={<ReceitaDetails />} />
+        </Routes>
       </main>
       <Footer />
     </div>
