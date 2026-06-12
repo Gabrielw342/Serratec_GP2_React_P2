@@ -1,0 +1,11 @@
+.loginPage {
+background-color: #F9F5E6 !important;
+
+  flex: 1;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}

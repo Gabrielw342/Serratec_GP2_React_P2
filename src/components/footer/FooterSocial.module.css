@@ -1,0 +1,27 @@
+.right {
+  flex: 1;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 18px;
+}
+
+.right svg {
+  font-size: 30px;
+
+  color:#F9F5E6;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.right svg:hover {
+  color: #ffd54f;
+
+  transform: translateY(-2px);
+}

@@ -1,0 +1,65 @@
+.favoritos-page {
+  font-family: 'Georgia', serif;
+  background: #F5EFE0;
+  min-height: 100vh;
+}
+
+.favoritos-main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px 16px;
+}
+
+.favoritos-heading {
+  color: #7B1C1C;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #7B1C1C;
+  padding-bottom: 8px;
+}
+
+.favoritos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.recipe-card {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  background: #fff;
+  cursor: pointer;
+}
+
+.recipe-card__img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.recipe-card__footer {
+  background: #7B1C1C;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+}
+
+.recipe-card__title {
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.recipe-card__fav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #E2A800;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0;
+}
