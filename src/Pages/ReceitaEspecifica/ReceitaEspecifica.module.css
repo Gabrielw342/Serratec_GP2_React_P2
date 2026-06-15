@@ -1,4 +1,3 @@
-
 .receita{
   background-color: #F9F5E6;
   min-height: 100vh;
@@ -29,6 +28,7 @@
 .info{
   flex: 1;
   color: #F9F5E6;
+  position: relative;
 }
 
 .titulo{
@@ -61,14 +61,21 @@
 }
 
 .favorito{
+  position: absolute;
+  top: -10px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   font-size: 32px;
+  line-height: 1;
   cursor: pointer;
   color: #F9F5E6;
   transition: transform .2s;
-  margin-left: 620px;
-  margin-top: -20px;
 }
 
 .favorito:hover{
