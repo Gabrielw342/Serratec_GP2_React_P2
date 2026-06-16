@@ -30,7 +30,7 @@
 
   padding: 2rem;
   box-sizing: border-box;
-  color: white;
+  color: #F9F5E6;
 }
 
 .overlay h2 {
@@ -53,7 +53,7 @@
   border: none;
   border-radius: 30px;
   background-color: #e67e22;
-  color: white;
+  color: #F9F5E6;
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;

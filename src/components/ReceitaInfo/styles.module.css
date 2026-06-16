@@ -44,7 +44,7 @@
 }
 
 .detalhes {
-    color: white;
+    color: #F9F5E6;
     padding: 1.5rem 2rem 2rem;
 }
 
@@ -60,5 +60,5 @@
 }
 
 .detalhes strong {
-    color: #d7e8db;
+    color: #F9F5E6;
 }

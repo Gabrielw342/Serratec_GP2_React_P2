@@ -31,7 +31,7 @@
   border-radius: 4px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
-  background: #fff;
+  background: #F9F5E6;
   cursor: pointer;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .recipe-card__title {
-  color: #fff;
+  color: #F9F5E6;
   font-size: 13px;
   font-weight: bold;
   text-decoration: none;
@@ -73,6 +73,7 @@
   font-size: 16px;
   text-align: center;
   padding: 40px 16px;
+  grid-column: 1 / -1;
 }
 
 .recipe-card__fav-btn {

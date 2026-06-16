@@ -1,12 +1,13 @@
 import styles from "./CardVertical.module.css"
 import descubra from "../../assets/descubra.png";
 
-function CardVertical(){
+function CardVertical({ id }){
 
     return(
 
     <div>
 
+        <Link to={`/categorias/${id}`}className={styles.link}>
         <div className={styles.card}>
 
             <div>
@@ -18,7 +19,7 @@ function CardVertical(){
             </div>
 
         </div>
-        
+        </Link>
     </div>
 
 

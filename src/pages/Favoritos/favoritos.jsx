@@ -9,19 +9,19 @@ export default function Favoritos() {
   return (
     <div className="favoritos-page">
       <main className="favoritos-main">
-        <DivisaoTitulo titulo="Favoritos" />
-
-        {favoritos.length === 0 ? (
-          <p className="favoritos-vazio">
-            Você ainda não adicionou nenhuma receita aos favoritos.
-          </p>
-        ) : (
-          <div className="favoritos-grid">
-            {favoritos.map((receita) => (
-              <ItemFavorito key={receita.id} recipe={receita} />
-            ))}
-          </div>
-        )}
+        <DivisaoTitulo titulo="Favoritos"/>
+        <div className="favoritos-grid">
+          {favoritos.length === 0 ? (
+            <p className="favoritos-vazio">Você ainda não adicionou nenhuma receita aos favoritos.</p>
+          ) : (
+            favoritos.map((receita) => (
+              <ItemFavorito
+                key={receita.id}
+                recipe={receita}
+              />
+            ))
+          )}
+        </div>
       </main>
     </div>
   );

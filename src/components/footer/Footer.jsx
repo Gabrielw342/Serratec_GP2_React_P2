@@ -6,20 +6,23 @@ import FooterSocial from "./FooterSocial";
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.left}>
-        <p>Who we are ➜</p>
-      </div>
+    <>
+      <div className={styles.separator}></div>
+        <footer className={styles.footer}>
+          <div className={styles.left}>
+            <p>Who we are ➜</p>
+          </div>
 
-      <Logo
-        src={logo}
-        alt="Logo SaborRei"
-        texto="© Grupo 2 - Serratec"
-        tamanho="160px"
-      />
+          <Logo
+            src={logo}
+            alt="Logo SaborRei"
+            texto="© Grupo 2 - Serratec"
+            tamanho="160px"
+          />
 
-      <FooterSocial />
-    </footer>
+          <FooterSocial />
+      </footer>
+    </>
   );
 }
 

@@ -74,10 +74,3 @@
 .avatar:hover {
   transform: scale(1.05);
 }
-.separator {
-  height: 3px;
-  
-  width: 100%;
-
-  background-color: transparent;
-}

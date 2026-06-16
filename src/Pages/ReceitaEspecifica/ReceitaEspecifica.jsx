@@ -3,14 +3,15 @@ import styles from './ReceitaEspecifica.module.css';
 import { ListaIngredientes } from "../../components/ListaIngredientes";
 import { ReceitaInfo } from "../../components/ReceitaInfo";
 import { ModoPreparo } from "../../components/ModoPreparo";
+import { useFavContext } from "../../context/FavContext/useFavContext";
+
 
 import { useParams } from "react-router-dom";
 import api from "../../services/api";
 
 function ReceitaDetails() {
 
-const [favorito, setFavorito] = useState(false);
-
+  const { ehFavorito, adicionarFavorito, removerFavorito } = useFavContext();
 
   const { id } = useParams();
 
@@ -44,9 +45,17 @@ const [favorito, setFavorito] = useState(false);
     <div className={styles.info}>
       <button
             className={styles.favorito}
-            onClick={() => setFavorito(!favorito)}
+            onClick={() =>
+              ehFavorito(receita)
+                ? removerFavorito(receita)
+                : adicionarFavorito({
+                    id: receita.id,
+                    title: receita.receita,
+                    image: receita.link_imagem,
+                  })
+            }
         >
-            {favorito ? "⭐" : "☆"}
+            {ehFavorito(receita) ? "⭐" : "☆"}
         </button>
       <h1 className={styles.titulo}>
         {receita.receita}

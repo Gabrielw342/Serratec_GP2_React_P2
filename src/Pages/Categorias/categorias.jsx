@@ -16,12 +16,6 @@ export const Categorias = () => {
         />
       </div>
 
-      <div className={styles.tituloCategorias}>
-        <h1>
-          <strong> Categorias </strong>
-        </h1>
-      </div>
-
       <section className={styles.listaCategorias}>
         {/* <Link to="/pages/listagem" state={{tipoCategoria: salgado}}>*/}
         <CategoriasCard

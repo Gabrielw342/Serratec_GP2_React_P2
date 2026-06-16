@@ -1,10 +1,12 @@
 import styles from "./cardHorizontal.module.css"
+import { Link } from "react-router-dom";
 
 
-function CardHorizontal({ imagem, titulo, descricao }){
+function CardHorizontal({ id, imagem, titulo, descricao }){
 
     return(
         
+        <Link to={`/receita/${id}`}className={styles.link}>
         <div className={styles.container}>
             
             <div className={styles.card}>
@@ -24,7 +26,7 @@ function CardHorizontal({ imagem, titulo, descricao }){
             </div>
             
          </div>
-        
+        </Link>
     );
 }
 export default CardHorizontal

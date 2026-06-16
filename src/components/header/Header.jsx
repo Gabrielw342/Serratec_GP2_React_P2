@@ -35,8 +35,6 @@ function Header() {
           </div>
         </nav>
       </header>
-
-      <div className={styles.separator}></div>
     </>
   );
 }
