@@ -7,7 +7,7 @@ function CardVertical({ id }){
 
     <div>
 
-        <Link to={`/categorias/${id}`}className={styles.link}>
+        {/* <Link to={`/categorias/${id}`}className={styles.link}> */}
         <div className={styles.card}>
 
             <div>
@@ -19,7 +19,7 @@ function CardVertical({ id }){
             </div>
 
         </div>
-        </Link>
+        {/* </Link> */}
     </div>
 
 

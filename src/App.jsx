@@ -20,7 +20,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/cadastro" element={<Cadastro />} />
                     <Route path="/categoria" element={<Categorias />} />
-                    <Route path="/listagem" element={<CategoriaReceitas />} />
+                    <Route path="/pages/listagem" element={<CategoriaReceitas />} />
                     <Route path="/favoritos" element={<Favoritos />} />
                     <Route path="/receita/:id" element={<ReceitaDetails />} />
                 </Routes>
