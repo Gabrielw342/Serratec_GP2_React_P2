@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -6,18 +7,15 @@ import logo from "../../assets/logoSRP2.png";
 import Logo from "../LogoSRP2/Logo";
 
 function LoginForm() {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState("");
   const [sucesso, setSucesso] = useState("");
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
-  const usuarioTeste = {
-    email: "teste@gmail.com",
-    senha: "123456",
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!email || !senha) {
@@ -32,22 +30,45 @@ function LoginForm() {
       return;
     }
 
-    if (
-      email !== usuarioTeste.email ||
-      senha !== usuarioTeste.senha
-    ) {
-      setErro("Email ou senha inválidos");
+    try {
+      const resposta = await fetch(
+        "http://localhost:3001/usuarios"
+      );
+
+      const usuarios = await resposta.json();
+
+      const usuarioEncontrado = usuarios.find(
+        (usuario) =>
+          usuario.email === email &&
+          usuario.senha === senha
+      );
+
+      if (!usuarioEncontrado) {
+        setErro("Email ou senha inválidos");
+        setSucesso("");
+        return;
+      }
+
+      setErro("");
+setSucesso("Login realizado com sucesso!");
+
+localStorage.setItem(
+  "usuarioLogado",
+  JSON.stringify(usuarioEncontrado)
+);
+
+console.log(usuarioEncontrado);
+
+setTimeout(() => {
+  navigate("/");
+}, 1500);
+
+    } catch (error) {
+      setErro("Erro ao conectar com o servidor");
       setSucesso("");
-      return;
+
+      console.error(error);
     }
-
-    setErro("");
-    setSucesso("Login realizado com sucesso!");
-
-    console.log({
-      email,
-      senha,
-    });
   };
 
   return (
@@ -121,18 +142,19 @@ function LoginForm() {
           )}
 
           <button
-          type="submit"
-          className={styles.botaocerto}
+            type="submit"
+            className={styles.botaocerto}
           >
-              Entrar
-             </button>
+            Entrar
+          </button>
 
-             <p className={styles.cadastroLink}>
-  Sem conta?{" "}
-  <span>
-    Criar aqui
-  </span>
-</p>
+          <p className={styles.cadastroLink}>
+            Sem conta?{" "}
+            <span onClick={() => navigate("/cadastro")}>
+              Criar aqui
+            </span>
+          </p>
+
         </form>
       </div>
     </div>

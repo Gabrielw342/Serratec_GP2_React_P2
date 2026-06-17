@@ -41,17 +41,25 @@
   color: #ffd54f;
 }
 
-.star {
-  color: #ffd700;
+.botaoSurpresa {
+  color: #ffd54f;
 
-  cursor: pointer;
+  text-decoration: none;
 
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 600;
 
   transition: 0.3s;
+
+  background-color: transparent;
+
+  border: transparent;
 }
 
+
 .avatarContainer {
+  position: relative;
+
   display: flex;
   align-items: center;
 }
@@ -73,4 +81,49 @@
 
 .avatar:hover {
   transform: scale(1.05);
+}
+
+.separator {
+  height: 3px;
+  
+  width: 100%;
+
+  background-color: transparent;
+}
+.menuUsuario {
+  position: absolute;
+
+  top: 55px;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 130px;
+
+  background-color: white;
+
+  border-radius: 8px;
+
+  padding: 8px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  z-index: 1000;
+}
+
+.menuUsuario a {
+  color: #333;
+
+  text-decoration: none;
+
+  padding: 8px;
+
+  border-radius: 4px;
+
+  font-size: 14px;
+}
+
+.menuUsuario a:hover {
+  background-color: #f5f5f5;
 }
