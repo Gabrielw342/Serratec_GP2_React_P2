@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import SearchBar from "../BarraDeBusca/BarraDeBusca";
 import Logo from "../LogoSRP2/Logo";
 
@@ -10,6 +12,11 @@ import { Link } from "react-router-dom";
 
 function Header() {
 
+  const [menuAberto, setMenuAberto] = useState(false);
+
+  const usuarioLogado = JSON.parse(
+    localStorage.getItem("usuarioLogado")
+  );
 
   return (
     <>
@@ -19,7 +26,11 @@ function Header() {
         </section>
 
         <section className={styles.logoContainer}>
-          <Logo src={logo} alt="SaborRei" tamanho="225px" />
+          <Logo
+            src={logo}
+            alt="SaborRei"
+            tamanho="225px"
+          />
         </section>
 
         <nav className={styles.nav}>
@@ -31,8 +42,25 @@ function Header() {
           <FaStar className={styles.star} />
 
           <div className={styles.avatarContainer}>
-            <img src={avatar} alt="Usuário" className={styles.avatar} />
+            <img
+              src={
+                usuarioLogado?.foto
+                  ? usuarioLogado.foto
+                  : avatar
+              }
+              alt="Usuário"
+              className={styles.avatar}
+              onClick={() => setMenuAberto(!menuAberto)}
+            />
+
+            {menuAberto && (
+              <div className={styles.menuUsuario}>
+                <Link to="/login">Login</Link>
+                <Link to="/cadastro">Cadastro</Link>
+              </div>
+            )}
           </div>
+
         </nav>
       </header>
     </>
