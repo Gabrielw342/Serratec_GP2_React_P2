@@ -1,39 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
-*{
-    padding: 0%;
-    margin: 0%;
-    box-sizing: border-box;
-}
-
-.page{
-    background-color: #F9F5E6;
-}
-
 .receita{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #2D4C39;
-    width: 100%;
-    max-width: 1313px;
-    margin: 3rem auto;
-    border-radius: 12px;
-    overflow: hidden;
-    font-family: 'Outfit', sans-serif;
+  background-color: #F9F5E6;
+  min-height: 100vh;
+  padding: 50px 20px;
 }
 
-.informacoes{
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    padding: 2rem;
+.container{
+  max-width: 1200px;
+  margin: 80px auto;
+  display: flex;
+  gap: 40px;
+  background-color: #264228;
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  align-items: center;
 }
 
-.instrucoes{
-    flex: 6;
-    gap: 1.5rem;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
+.imagem{
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 20px;
+  flex-shrink: 0;
+  
+}
+
+.info{
+  flex: 1;
+  color: #F9F5E6;
+  position: relative;
+}
+
+.titulo{
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 35px;
+}
+
+.subtitulo{
+  font-size: 28px;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.ingredientes{
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+.preparo{
+  line-height: 1.8;
+  font-size: 18px;
+  text-align: justify;
+}
+.cabecalho{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.favorito{
+  position: absolute;
+  top: -10px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  color: #F9F5E6;
+  transition: transform .2s;
+}
+
+.favorito:hover{
+  transform: scale(1);
 }

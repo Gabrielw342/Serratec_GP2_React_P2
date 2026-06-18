@@ -1,31 +1,26 @@
-import "./Favoritos.css";
+import "./favoritos.css";
 import ItemFavorito from "../../components/itemFavorito/itemFavorito";
-import boloBolo from "../../assets/bolo_bolo.png";
 import DivisaoTitulo from "../../components/DivisaoTitulo/DivisaoTitulo";
-
-const receitas = [
-  { id: 1, title: "Bolo de bolo", image: boloBolo },
-  { id: 2, title: "Bolo de bolo", image: boloBolo },
-  { id: 3, title: "Bolo de bolo", image: boloBolo },
-  { id: 4, title: "Bolo de bolo", image: boloBolo },
-  { id: 5, title: "Bolo de bolo", image: boloBolo },
-  { id: 6, title: "Bolo de bolo", image: boloBolo },
-  { id: 7, title: "Bolo de bolo", image: boloBolo },
-  { id: 8, title: "Bolo de bolo", image: boloBolo },
-]
+import { useFavContext } from "../../context/FavContext/useFavContext";
 
 export default function Favoritos() {
+  const { favoritos } = useFavContext();
+
   return (
     <div className="favoritos-page">
       <main className="favoritos-main">
         <DivisaoTitulo titulo="Favoritos"/>
         <div className="favoritos-grid">
-          {receitas.map((receita) => (
-            <ItemFavorito
-              key={receita.id}
-              recipe={receita}
-            />
-          ))}
+          {favoritos.length === 0 ? (
+            <p className="favoritos-vazio">Você ainda não adicionou nenhuma receita aos favoritos.</p>
+          ) : (
+            favoritos.map((receita) => (
+              <ItemFavorito
+                key={receita.id}
+                recipe={receita}
+              />
+            ))
+          )}
         </div>
       </main>
     </div>

@@ -6,20 +6,30 @@ import FooterSocial from "./FooterSocial";
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.left}>
-        <p>Who we are ➜</p>
-      </div>
+    <>
+      <div className={styles.separator}></div>
 
-      <Logo
-        src={logo}
-        alt="Logo SaborRei"
-        texto="© Grupo 2 - Serratec"
-        tamanho="160px"
-      />
+        <footer className={styles.footer}>
+          <div className={styles.left}>
+            <p> Carlos Eduardo: Categoria</p>
+            <p> Enzo Costa: categoria home</p>
+            <p> Gabriel Ecard: Login e cadastro</p>
+            <p> Kenny Robert: Categoria listagem</p>
+            <p> Vinicius Lamas: Home</p>
+            <p> Phelipe Damasio: Favoritos</p>
+            <p> Vitor Ribeiro: Receita especifica</p>
+          </div>
 
-      <FooterSocial />
-    </footer>
+          <Logo
+            src={logo}
+            alt="Logo SaborRei"
+            texto="© Grupo 2 - Serratec"
+            tamanho="160px"
+          />
+
+          <FooterSocial />
+      </footer>
+    </>
   );
 }
 

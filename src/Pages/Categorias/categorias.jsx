@@ -16,122 +16,116 @@ export const Categorias = () => {
         />
       </div>
 
-      <div className={styles.tituloCategorias}>
-        <h1>
-          <strong> Categorias </strong>
-        </h1>
-      </div>
-
       <section className={styles.listaCategorias}>
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: salgado}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria: "salgado", nomeExibicao:"Salgado"}}>
         <CategoriasCard
           src={getImagem("arrozFeijão.png")}
           alt="Picanha"
           nomeCategoria="Salgado"
           cor="#7c65f3"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: agridoce}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria: "agridoce", nomeExibicao:"Agridoce"}}>
         <CategoriasCard
           src={getImagem("vegana.png")}
           alt="Salada"
           nomeCategoria="Agridoce"
           cor="#0fd230"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: doce}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria: "doce", nomeExibicao:"Doce"}}>
         <CategoriasCard
           src={getImagem("bolo.png")}
           alt="Bolo de Chocolate"
           nomeCategoria="Doce"
           cor="#33b5fb"
         />
-        {/* </Link> */}
+        </Link>
 
         {/* ----- BUSCA! ----- */}
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: frango}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria: "/receitas/descricao?descricao=frango&page=1&limit=999", nomeExibicao:"Carne de Frango"}}>
         <CategoriasCard
           src={getImagem("coxadefrango.png")}
           alt="Prato Com Frango"
           nomeCategoria="Carne de Frango"
           cor="#f63c3c"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: sushi}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria:"/receitas/descricao?descricao=sushi&page=1&limit=999", nomeExibicao:"Sushi"}}>
         <CategoriasCard
           src={getImagem("sushi.png")}
           alt="Sushis"
           nomeCategoria="Sushi"
           cor="#ff701e"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: feijoada}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria:"/receitas/descricao?descricao=feijoada&page=1&limit=999", nomeExibicao:"Feijoadas"}}>    
         <CategoriasCard
           src={getImagem("diversos.png")}
           alt="Feijoada"
           nomeCategoria="Feijoadas"
           cor="#b77a59"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: risotto}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria:"/receitas/descricao?descricao=risotto&page=1&limit=999", nomeExibicao:"Risotos"}}>
         <CategoriasCard
           src={getImagem("risotto.png")}
           alt="Risottos"
           nomeCategoria="Risotos"
           cor="#fec457"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: pimenta}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria:"/receitas/descricao?descricao=pimenta&page=1&limit=999", nomeExibicao:"Picantes"}}>
         <CategoriasCard
           src={getImagem("picante.png")}
           alt="Caldo Apimentado"
           nomeCategoria="Picantes"
           cor="#ff5050"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: queijo}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria:"/receitas/descricao?descricao=queijo&page=1&limit=999", nomeExibicao:"Queijos"}}>
         <CategoriasCard
           src={getImagem("bolinhaQueijo.png")}
           alt="Bolinha de Queijo temperada"
           nomeCategoria="Queijos"
           cor="#e8ff1b"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: pescado}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria:"/receitas/descricao?descricao=pescado&page=1&limit=999", nomeExibicao:"Pescados"}}>
         <CategoriasCard
           src={getImagem("pescado.png")}
           alt="Pescado"
           nomeCategoria="Pescados"
           cor="#10a729"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: pescado}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria:"/receitas/descricao?descricao=ceviche&page=1&limit=999", nomeExibicao:"Ceviches"}}>
         <CategoriasCard
           src={getImagem("ceviche.png")}
           alt="Ceviche"
           nomeCategoria="Ceviches"
           cor="#fd96f3"
         />
-        {/* </Link> */}
+        </Link>
 
-        {/* <Link to="/pages/listagem" state={{tipoCategoria: pescado}}>*/}
+        <Link to="/pages/listagem" state={{tipoCategoria:"/receitas/descricao?descricao=bisteca&page=1&limit=999", nomeExibicao:"Bistecas"}}>
         <CategoriasCard
           src={getImagem("bisteca.png")}
           alt="Carne Bisteca"
           nomeCategoria="Bistecas"
           cor="#e4a94f"
         />
-        {/* </Link> */}
+        </Link>
       </section>
     </div>
   );
