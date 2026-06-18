@@ -73,7 +73,7 @@ const selecaoEquipe = [
   { receitaId: 92 },
   { receitaId: 9 },
   { receitaId: 5 },
-  { receitaId: 83 },
+  { receitaId: 75 },
   { receitaId: 43 },
 ];
 
