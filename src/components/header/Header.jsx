@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import SearchBar from "../BarraDeBusca/BarraDeBusca";
+import BarraDeBusca from "../BarraDeBusca/BarraDeBusca";
 import Logo from "../LogoSRP2/Logo";
 
 import styles from "./Header.module.css";
@@ -42,9 +42,7 @@ function Header() {
   return (
     <>
       <header className={styles.header}>
-        <section className={styles.searchContainer}>
-          <SearchBar />
-        </section>
+        <BarraDeBusca />
 
         <section className={styles.logoContainer}>
           <Logo

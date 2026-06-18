@@ -5,7 +5,6 @@ import CardVertical from "../../components/Card/CardVertical";
 import Carousel from "../../components/Carousel/Carousel";
 import DivisaoTitulo from "../../components/DivisaoTitulo/DivisaoTitulo";
 import BannerCategorias from "../../components/Banner/BannerCategoria";
-import BarraDeBusca from "../../components/BarraDeBusca/BarraDeBusca";
 
 import styles from "./Home.module.css";
 import api from "../../services/api";
@@ -69,13 +68,13 @@ const categoriasHome = [
 
 // receita da equipe, passando o id da receita
 const selecaoEquipe = [
-  { receitaId: 1 }, 
-  { receitaId: 2 }, 
-  { receitaId: 3 },
-  { receitaId: 4 },
+  { receitaId: 7 }, 
+  { receitaId: 93 }, 
+  { receitaId: 92 },
+  { receitaId: 9 },
   { receitaId: 5 },
   { receitaId: 6 },
-  { receitaId: 7 },
+  { receitaId: 43 },
 ];
 
 function Home() {
@@ -102,8 +101,6 @@ function Home() {
 
   return (
     <>
-
-    <BarraDeBusca valor={busca} aoDigitar={setBusca} />
 
       {/* primeiro carousel */}
       <Carousel imagens={bannersHome} />
