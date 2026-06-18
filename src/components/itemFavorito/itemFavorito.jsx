@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { useFavContext } from "../../context/FavContext/useFavContext";
-import ConfirmModal from "../Confirmmodal/confirmmodal";
+import ConfirmModal from "../Modal/confirmmodal";
+import LoginModal from "../Modal/loginmodal";
+import { estaLogado } from "../../services/auth";
 
 export default function ItemFavorito({ recipe }) {
   const { ehFavorito, adicionarFavorito, removerFavorito } = useFavContext();
   const [modalAberto, setModalAberto] = useState(false);
+  const [modalLoginAberto, setModalLoginAberto] = useState(false);
 
   const estaNaLista = ehFavorito(recipe);
 
@@ -14,6 +17,8 @@ export default function ItemFavorito({ recipe }) {
   const clicarFavorito = () => {
     if (estaNaLista) {
       setModalAberto(true);
+    } else if (!estaLogado()) {
+      setModalLoginAberto(true);
     } else {
       adicionarFavorito(recipe);
     }
@@ -46,6 +51,11 @@ export default function ItemFavorito({ recipe }) {
         textoCancelar="Cancelar"
         onConfirmar={confirmarRemocao}
         onCancelar={() => setModalAberto(false)}
+      />
+
+      <LoginModal
+        aberto={modalLoginAberto}
+        onCancelar={() => setModalLoginAberto(false)}
       />
     </div>
   );

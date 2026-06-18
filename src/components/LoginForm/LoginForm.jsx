@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -8,6 +8,9 @@ import Logo from "../LogoSRP2/Logo";
 
 function LoginForm() {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const destino = location.state?.from || "/";
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -60,7 +63,7 @@ localStorage.setItem(
 console.log(usuarioEncontrado);
 
 setTimeout(() => {
-  navigate("/");
+  navigate(destino);
 }, 1500);
 
     } catch (error) {

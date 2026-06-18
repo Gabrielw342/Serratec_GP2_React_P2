@@ -11,12 +11,21 @@
   justify-content: center;
 }
 
-.logocontainer{
+.searchContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  flex: 1;
+  display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .nav {
-  flex: 1.2;
+  flex: 1;
 
   display: flex;
   justify-content: flex-end;

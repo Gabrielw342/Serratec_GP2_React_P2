@@ -4,6 +4,8 @@ import { ListaIngredientes } from "../../components/ListaIngredientes";
 import { ReceitaInfo } from "../../components/ReceitaInfo";
 import { ModoPreparo } from "../../components/ModoPreparo";
 import { useFavContext } from "../../context/FavContext/useFavContext";
+import LoginModal from "../../components/Modal/loginmodal";
+import { estaLogado } from "../../services/auth";
 
 
 import { useParams } from "react-router-dom";
@@ -16,6 +18,7 @@ function ReceitaDetails() {
   const { id } = useParams();
 
   const [receita, setReceita] = useState(null);
+  const [modalLoginAberto, setModalLoginAberto] = useState(false);
 
   useEffect(() => {
     api.get(`/receitas/${id}`)
@@ -32,6 +35,24 @@ function ReceitaDetails() {
     return <h1>Carregando...</h1>;
   }
 
+  const clicarFavorito = () => {
+    if (ehFavorito(receita)) {
+      removerFavorito(receita);
+      return;
+    }
+
+    if (!estaLogado()) {
+      setModalLoginAberto(true);
+      return;
+    }
+
+    adicionarFavorito({
+      id: receita.id,
+      title: receita.receita,
+      image: receita.link_imagem,
+    });
+  };
+
   return (
   <div className={styles.receita}>
   <div className={styles.container}>
@@ -45,15 +66,7 @@ function ReceitaDetails() {
     <div className={styles.info}>
       <button
             className={styles.favorito}
-            onClick={() =>
-              ehFavorito(receita)
-                ? removerFavorito(receita)
-                : adicionarFavorito({
-                    id: receita.id,
-                    title: receita.receita,
-                    image: receita.link_imagem,
-                  })
-            }
+            onClick={clicarFavorito}
         >
             {ehFavorito(receita) ? "⭐" : "☆"}
         </button>
@@ -83,6 +96,11 @@ function ReceitaDetails() {
     </div>
 
   </div>
+
+  <LoginModal
+    aberto={modalLoginAberto}
+    onCancelar={() => setModalLoginAberto(false)}
+  />
 </div>
 );
 }

@@ -8,9 +8,16 @@ function Footer() {
   return (
     <>
       <div className={styles.separator}></div>
+
         <footer className={styles.footer}>
           <div className={styles.left}>
-            <p>Who we are ➜</p>
+            <p> Carlos Eduardo: Categoria</p>
+            <p> Enzo Costa: categoria home</p>
+            <p> Gabriel Ecard: Login e cadastro</p>
+            <p> Kenny Robert: Categoria listagem</p>
+            <p> Vinicius Lamas: Home</p>
+            <p> Phelipe Damasio: Favoritos</p>
+            <p> Vitor Ribeiro: Receita especifica</p>
           </div>
 
           <Logo
