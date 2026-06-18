@@ -5,6 +5,7 @@ import CardVertical from "../../components/Card/CardVertical";
 import Carousel from "../../components/Carousel/Carousel";
 import DivisaoTitulo from "../../components/DivisaoTitulo/DivisaoTitulo";
 import BannerCategorias from "../../components/Banner/BannerCategoria";
+import BarraDeBusca from "../../components/BarraDeBusca/BarraDeBusca";
 
 import styles from "./Home.module.css";
 import api from "../../services/api";
@@ -79,10 +80,11 @@ const selecaoEquipe = [
 
 function Home() {
   const [receitas, setReceitas] = useState([]);
+  const [busca, setBusca] = useState("");
 
   const bannersHome = [cozinhar, descubra, inspire];
   const bannersUltimasReceitas = [lasanha, frango, bolo_de_chocolate];
-
+  
   useEffect(() => {
     api
       .get("/receitas/todas?page=1&limit=93")
@@ -94,15 +96,22 @@ function Home() {
       });
   }, []);
 
+    const receitasFiltradas = receitas.filter((receita) =>
+    receita.receita?.toLowerCase().includes(busca.toLowerCase())
+);
+
   return (
     <>
+
+    <BarraDeBusca valor={busca} aoDigitar={setBusca} />
+
       {/* primeiro carousel */}
       <Carousel imagens={bannersHome} />
 
       <DivisaoTitulo titulo="Receitas em Destaque" />
 
       <div className={styles.cardContainer}>
-        {receitas.slice(0, 5).map((receita) => (
+        {receitasFiltradas.slice(0, 5).map((receita) => (
           <CardHorizontal
             key={receita.id}
             id={receita.id}
