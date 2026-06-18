@@ -1,0 +1,22 @@
+.ingredientes {
+    background-color: #2f5a44;
+    padding: 2rem;
+    border-radius: 12px;
+    color: #F9F5E6;
+}
+
+.ingredientes h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.ingredientes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredientes li {
+    margin-bottom: .8rem;
+    font-size: 1.1rem;
+}

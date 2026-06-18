@@ -1,0 +1,18 @@
+.preparo {
+    background-color: #2f5a44;
+    padding: 2rem;
+    border-radius: 12px;
+    color: #F9F5E6;
+}
+
+.preparo h2 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.preparo p {
+    line-height: 1.8;
+    font-size: 1rem;
+    text-align: justify;
+    white-space: pre-line;
+}

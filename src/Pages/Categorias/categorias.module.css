@@ -1,0 +1,38 @@
+.categoriaspage {
+    display: flex;
+    width: 100%;
+    height: 100dvh;
+    flex-direction: column;
+}
+
+.CategoriasFoto {
+    height: 320px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.CategoriasFoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: center center;
+}
+
+.listaCategorias {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 80%;
+    margin: 0 auto;
+    
+    grid-auto-rows: 100px;
+
+    gap: 20px;
+    padding: 20px;
+}
+
+.listaCategorias a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}

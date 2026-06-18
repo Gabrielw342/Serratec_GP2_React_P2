@@ -1,0 +1,171 @@
+.header {
+  height: 70px;
+
+  background-color: #7d241c;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+
+  justify-content: center;
+}
+
+.searchContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  flex: 1;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  gap: 18px;
+}
+
+.nav a {
+  color: #F9F5E6;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.nav a:hover {
+  color: #ffd54f;
+}
+
+.botaoSurpresa {
+  color: #ffd54f;
+
+  background-color: transparent;
+
+  border: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.botaoSurpresa:hover {
+  color: #fff3b0;
+}
+
+.avatarContainer {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 2px solid #f0c44c;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+
+  border-color: #ffd54f;
+}
+
+.separator {
+  height: 3px;
+
+  width: 100%;
+
+  background-color: transparent;
+}
+
+.menuUsuario {
+  position: absolute;
+
+  top: 55px;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 130px;
+
+  background-color: white;
+
+  border-radius: 8px;
+
+  padding: 8px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  z-index: 1000;
+}
+
+.menuUsuario a {
+  color: #333;
+
+  text-decoration: none;
+
+  padding: 8px;
+
+  border-radius: 4px;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.menuUsuario a:hover {
+  background-color: #f5f5f5;
+}
+
+.botaoSair {
+  width: 100%;
+
+  background: transparent;
+
+  border: none;
+
+  color: #333;
+
+  padding: 8px;
+
+  border-radius: 4px;
+
+  font-size: 14px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.botaoSair:hover {
+  background-color: #f5f5f5;
+}

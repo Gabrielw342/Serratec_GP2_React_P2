@@ -1,0 +1,46 @@
+:root {
+    --bordaSuaveTam: 20px;
+}
+
+.categoriasCard {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 40% 1fr;
+    grid-template-rows: 1fr;
+
+    border-radius: var(--bordaSuaveTam);
+
+    overflow: hidden;
+
+    background-color: var(--bgCor);
+
+    border: 2px solid color-mix(in srgb, var(--bgCor), black 20%);
+
+    cursor: pointer;
+}
+
+.categoriasCard:hover {
+    transition: 0.3s;
+    scale: 1.05;
+}
+
+.categoriasCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 0;
+    border-top-right-radius: var(--bordaSuaveTam);
+    border-bottom-right-radius: var(--bordaSuaveTam);
+}
+
+.nomeCategoria {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--bgCor);
+}
