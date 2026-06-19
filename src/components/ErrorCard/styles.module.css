@@ -2,12 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #2f5a44;
-    border-radius: 2rem;
-    padding: 1rem;
+    padding: 3rem;
 }
 
 .imagem{
     height: 450px;
     width: 800px;
+    border: 15px solid #264a2b;
 }
