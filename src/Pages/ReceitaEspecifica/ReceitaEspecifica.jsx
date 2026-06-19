@@ -10,6 +10,7 @@ import { estaLogado } from "../../services/auth";
 
 import { useParams } from "react-router-dom";
 import api from "../../services/api";
+import ErrorCard from "../../components/ErrorCard";
 
 function ReceitaDetails() {
 
@@ -32,7 +33,7 @@ function ReceitaDetails() {
 
   //erro caso id da receita n exista
   if (!receita) {
-    return <h1>Carregando...</h1>;
+    return <ErrorCard/>;
   }
 
   const clicarFavorito = () => {
