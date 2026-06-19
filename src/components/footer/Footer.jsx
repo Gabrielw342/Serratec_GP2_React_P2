@@ -24,7 +24,7 @@ function Footer() {
             src={logo}
             alt="Logo SaborRei"
             texto="© Grupo 2 - Serratec"
-            tamanho="160px"
+            tamanho="145px"
           />
 
           <FooterSocial />
