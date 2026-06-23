@@ -1,4 +1,4 @@
-import styles from "./cardHorizontal.module.css"
+import styles from "./CardHorizontal.module.css"
 import { Link } from "react-router-dom";
 
 

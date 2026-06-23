@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import styles from "./loginModal.module.css";
+import styles from "./loginmodal.module.css";
 
 export default function LoginModal({
   aberto,

@@ -1,10 +1,10 @@
 import "./App.css";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import Home from "./Pages/Home/home";
+import Home from "./pages/Home/home";
 import Login from "./Pages/login/Login";
 import Cadastro from "./Pages/Cadastro/Cadastro";
-import Favoritos from "./Pages/Favoritos/favoritos";
+import Favoritos from "./pages/Favoritos/favoritos";
 import ReceitaDetails from "./Pages/ReceitaEspecifica/ReceitaEspecifica"
 import { CategoriaReceitas } from "./Pages/CategoriaReceitas/CategoriaReceitas"
 import { Routes, Route } from "react-router-dom";

@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./CadastroForm.module.css";
 
-import logo from "../../assets/logoSRP2.png";
-import Logo from "../LogoSRP2/Logo";
+import logo from "../../assets/LogoSRP2.png";
+import Logo from "../logoSRP2/Logo";
 
 function CadastroForm() {
   const navigate = useNavigate();
