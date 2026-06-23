@@ -3,8 +3,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import logo from "../../assets/logoSRP2.png";
-import Logo from "../LogoSRP2/Logo";
+import logo from "../../assets/LogoSRP2.png";
+import Logo from "../logoSRP2/Logo";
 
 function LoginForm() {
   const navigate = useNavigate();

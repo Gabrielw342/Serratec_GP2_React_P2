@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 import BarraDeBusca from "../BarraDeBusca/BarraDeBusca";
-import Logo from "../LogoSRP2/Logo";
+import Logo from "../logoSRP2/Logo";
 
 import styles from "./Header.module.css";
-import logo from "../../assets/logoSRP2.png";
+import logo from "../../assets/LogoSRP2.png";
 import avatar from "../../assets/placeholderteste.png";
 
 import { Link, useNavigate } from "react-router-dom";
