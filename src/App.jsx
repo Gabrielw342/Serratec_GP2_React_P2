@@ -11,7 +11,6 @@ import Categorias from "./Pages/Categorias/categorias";
 import ScrollToTop from "./components/ScrollToTop/scrolltotop";
 import { Routes, Route } from "react-router-dom";
 
-// IMPORTE O CHAT
 import ChatBot from "./components/ChatBot/ChatBot";
 
 function App() {
@@ -33,8 +32,7 @@ function App() {
       </main>
 
       <Footer />
-
-      {/* CHAT FLUTUANTE */}
+      
       <ChatBot />
     </div>
   );
