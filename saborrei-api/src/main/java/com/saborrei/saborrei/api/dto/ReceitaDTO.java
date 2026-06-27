@@ -1,4 +1,4 @@
-package com.saborrei.saborrei.api.DTO;
+package com.saborrei.saborrei.api.dto;
 
 public class ReceitaDTO {
 }

@@ -1,6 +1,6 @@
-package com.saborrei.saborrei.api.Service;
+package com.saborrei.saborrei.api.service;
 
-import com.saborrei.saborrei.api.DTO.ReceitaDTO;
+import com.saborrei.saborrei.api.dto.ReceitaDTO;
 import org.springframework.stereotype.Service;
 import java.util.List;
 

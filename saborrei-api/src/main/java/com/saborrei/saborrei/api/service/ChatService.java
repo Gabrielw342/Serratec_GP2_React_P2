@@ -1,4 +1,4 @@
-package com.saborrei.saborrei.api.Service;
+package com.saborrei.saborrei.api.service;
 
 import com.saborrei.saborrei.api.dto.ChatRequest;
 import com.saborrei.saborrei.api.dto.ChatResponse;
