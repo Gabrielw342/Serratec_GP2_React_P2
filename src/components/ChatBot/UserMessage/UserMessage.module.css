@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 70%;
+
+  padding: 10px 12px;
+
+  background-color: #7d241c;
+  color: #fff;
+
+  border-radius: 12px 12px 0 12px;
+
+  word-wrap: break-word;
+}

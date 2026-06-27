@@ -1,0 +1,139 @@
+.chatCard {
+  position: fixed;
+
+  right: 32px;
+  bottom: 118px;
+
+  width: 380px;
+  height: 560px;
+
+  background: #f9f5e7;
+
+  border: 2px solid #d9c7a3;
+  border-radius: 22px;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+
+  z-index: 998;
+
+  animation: openChat 0.28s ease;
+  transform-origin: bottom right;
+}
+
+.header {
+  height: 80px;
+
+  background: #7d241c;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 18px;
+
+  flex-shrink: 0;
+}
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  background: #f9f5e7;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleContainer h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.titleContainer span {
+  margin-top: 2px;
+
+  color: #f1e6d2;
+
+  font-size: 13px;
+}
+
+.closeButton {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.messages {
+  flex: 1;
+
+  background: #f9f5e7;
+
+  padding: 20px;
+
+  overflow-y: auto;
+}
+
+.footer {
+  min-height: 80px;
+
+  border-top: 2px solid #ece2ca;
+
+  background: #fffdf7;
+
+  padding: 16px;
+
+  flex-shrink: 0;
+}
+
+@keyframes openChat {
+  from {
+    opacity: 0;
+    transform: scale(0.82) translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
