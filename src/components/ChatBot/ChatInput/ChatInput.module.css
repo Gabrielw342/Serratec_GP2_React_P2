@@ -4,9 +4,9 @@
   gap: 10px;
 
   padding: 10px;
-  background-color: #fff;
+  background-color: #F9F5E6;
 
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #F9F5E6;
 }
 
 .input {
@@ -16,7 +16,7 @@
 
   padding: 0 12px;
 
-  border: 1px solid #ccc;
+  border: 2px solid #264228;
   border-radius: 8px;
 
   outline: none;
@@ -31,8 +31,8 @@
 
   padding: 0 16px;
 
-  background-color: #7d241c;
-  color: #fff;
+  background-color: #264228;
+  color: #F9F5E6;
 
   border: none;
   border-radius: 8px;

@@ -9,7 +9,7 @@
 
   background: linear-gradient(180deg, #fbf7ed 0%, #f6f0e3 100%);
 
-  border: 1px solid rgba(125, 36, 28, 0.18);
+  border: 2px solid #264228;
   border-radius: 22px;
 
   overflow: hidden;
@@ -44,7 +44,7 @@
 
   flex-shrink: 0;
 
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 6px 18px #F9F5E6;
 }
 
 .headerInfo {
@@ -88,7 +88,7 @@
 .titleContainer h2 {
   margin: 0;
 
-  color: white;
+  color: #f1e6d2;
 
   font-size: 18px;
   font-weight: 700;
@@ -99,7 +99,7 @@
 
   color: #f1e6d2;
 
-  font-size: 13px;
+  font-size: 15px;
 }
 
 /* CLOSE BUTTON */
@@ -112,7 +112,7 @@
 
   background: transparent;
 
-  color: white;
+  color: faf4e8;
 
   font-size: 20px;
 
@@ -130,7 +130,7 @@
   flex: 1;
 
   background:
-    radial-gradient(circle at top, rgba(125, 36, 28, 0.04), transparent 60%),
+    radial-gradient(circle at top, #faf4e8, transparent 60%),
     #f7f1e5;
 
   padding: 20px;
@@ -144,7 +144,7 @@
 
   border-top: 1px solid rgba(125, 36, 28, 0.12);
 
-  background: linear-gradient(180deg, #fffdf7 0%, #faf4e8 100%);
+  background: linear-gradient(180deg, #faf4e8 0%, #faf4e8 100%);
 
   padding: 16px;
 

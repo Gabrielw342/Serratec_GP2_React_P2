@@ -21,7 +21,7 @@ function ChatMessages({ messages, isTyping }) {
       )}
 
       {isTyping && (
-        <ChatBotMessage text="Chef IA está digitando..." />
+        <ChatBotMessage text="..." />
       )}
 
      
