@@ -1,9 +1,9 @@
 import { useState } from "react";
-
 import ChatButton from "./ChatButton/ChatButton";
 import ChatCard from "./ChatCard/ChatCard";
+import { enviarMensagem } from "./api/chatService";
 
-function ChatBot()  {
+function ChatBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
@@ -21,42 +21,42 @@ function ChatBot()  {
   }
 
   function closeChat() {
-  setIsClosing(true);
+    setIsClosing(true);
+    // setTimeout(() => {
+      setIsClosing(false);
+      setIsOpen(false);
+    // }, 300);
+  }
 
-  setTimeout(() => {
-    setIsClosing(false);
-    setIsOpen(false);
-  }, 300);
-}
+  async function sendMessage(text) {
+    const userMessage = { id: Date.now(), sender: "user", text };
+    setMessages((old) => [...old, userMessage]);
+    setIsTyping(true);
 
- function sendMessage(text) {
-  const userMessage = {
-    id: Date.now(),
-    sender: "user",
-    text,
-  };
+    try {
+      const resposta = await enviarMensagem(text);
 
-  setMessages((old) => [...old, userMessage]);
-
-  setIsTyping(true);
-
-  setTimeout(() => {
-    const botMessage = {
-      id: Date.now() + 1,
-      sender: "bot",
-      text: "alooooooou!",
-    };
-
-    setMessages((old) => [...old, botMessage]);
-
-    setIsTyping(false);
-  }, 800);
-}
+      const botMessage = {
+        id: Date.now() + 1,
+        sender: "bot",
+        text: resposta,
+      };
+      setMessages((old) => [...old, botMessage]);
+    } catch (error) {
+      const errorMessage = {
+        id: Date.now() + 1,
+        sender: "bot",
+        text: "Desculpe, tive um problema para me conectar. Tente novamente!",
+      };
+      setMessages((old) => [...old, errorMessage]);
+    } finally {
+      setIsTyping(false);
+    }
+  }
 
   return (
     <>
       <ChatButton onClick={openChat} />
-
       {isOpen && (
         <ChatCard
           onClose={closeChat}
