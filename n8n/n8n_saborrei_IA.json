@@ -34,24 +34,26 @@
       ],
       "id": "eced64ec-6eb9-4914-a954-76f1a2fd1016",
       "name": "AI Agent",
-      "executeOnce": true
+      "executeOnce": false,
+      "retryOnFail": true
     },
     {
       "parameters": {
+        "modelName": "models/gemini-2.5-flash",
         "options": {}
       },
       "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
       "typeVersion": 1.1,
       "position": [
-        -608,
-        400
+        -512,
+        320
       ],
       "id": "9fd61814-c1ff-424a-b246-3659de7f1b0e",
       "name": "Google Gemini Chat Model",
       "credentials": {
         "googlePalmApi": {
-          "id": "BpHRi6wKfx96U0oz",
-          "name": "Enzo 2"
+          "id": "b2fqN9DHN4gOVbJj",
+          "name": "Gabriel Ecard 3"
         }
       },
       "notes": "responda somente com: banana"
@@ -124,7 +126,7 @@
       "typeVersion": 1.3,
       "position": [
         -448,
-        352
+        448
       ],
       "id": "17c5687e-2ad9-4e8b-9ee6-a2898302ff5d",
       "name": "Postgres PGVector Store",
@@ -140,16 +142,16 @@
       "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
       "typeVersion": 1,
       "position": [
-        -224,
-        560
+        -288,
+        608
       ],
       "id": "89b4b646-13cc-4638-959f-ba2d87d6daef",
       "name": "Embeddings Google Gemini",
       "executeOnce": true,
       "credentials": {
         "googlePalmApi": {
-          "id": "BpHRi6wKfx96U0oz",
-          "name": "Enzo 2"
+          "id": "b2fqN9DHN4gOVbJj",
+          "name": "Gabriel Ecard 3"
         }
       }
     },
@@ -174,7 +176,7 @@
       "typeVersion": 1.1,
       "position": [
         544,
-        320
+        304
       ],
       "id": "96c85828-8afb-4e6a-8795-45ac9daa083f",
       "name": "Default Data Loader"
@@ -287,7 +289,7 @@
     "binaryMode": "separate",
     "availableInMCP": false
   },
-  "versionId": "c1190d02-6d89-4ecf-a3b5-5c4760a401f6",
+  "versionId": "0ae24aa8-ce2b-4803-a973-2a6aa33e57c2",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "f62bf1b7a32e2dd0d6f2a0ed45718ad791370944dd425d1496eccc90df0413b0"
