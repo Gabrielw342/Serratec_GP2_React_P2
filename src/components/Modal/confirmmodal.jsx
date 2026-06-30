@@ -1,4 +1,4 @@
-import styles from "./ConfirmModal.module.css";
+import styles from "./confirmmodal.module.css";
 
 export default function ConfirmModal({
   aberto,
