@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+  background-color: #F9F5E6;
+
+  border-top: 1px solid #F9F5E6;
+}
+
+.input {
+  flex: 1;
+
+  height: 42px;
+
+  padding: 0 12px;
+
+  border: 2px solid #264228;
+  border-radius: 8px;
+
+  outline: none;
+}
+
+.input:focus {
+  border-color: #7d241c;
+}
+
+.button {
+  height: 42px;
+
+  padding: 0 16px;
+
+  background-color: #264228;
+  color: #F9F5E6;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.button:hover {
+  opacity: 0.9;
+}

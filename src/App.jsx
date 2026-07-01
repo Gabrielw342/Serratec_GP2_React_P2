@@ -5,17 +5,19 @@ import Home from "./Pages/Home/home";
 import Login from "./Pages/login/Login";
 import Cadastro from "./Pages/Cadastro/Cadastro";
 import Favoritos from "./Pages/Favoritos/favoritos";
-import ReceitaDetails from "./Pages/ReceitaEspecifica/ReceitaEspecifica"
-import { CategoriaReceitas } from "./Pages/CategoriaReceitas/CategoriaReceitas"
-import { Routes, Route } from "react-router-dom";
+import ReceitaDetails from "./Pages/ReceitaEspecifica/ReceitaEspecifica";
+import { CategoriaReceitas } from "./Pages/CategoriaReceitas/CategoriaReceitas";
 import Categorias from "./Pages/Categorias/categorias";
 import ScrollToTop from "./components/ScrollToTop/scrolltotop";
+import { Routes, Route } from "react-router-dom";
+
+import ChatBot from "./components/ChatBot/ChatBot";
 
 function App() {
   return (
     <div className="app">
       <Header />
-      <ScrollToTop /> 
+      <ScrollToTop />
 
       <main className="content">
         <Routes>
@@ -30,9 +32,10 @@ function App() {
       </main>
 
       <Footer />
+      
+      <ChatBot />
     </div>
   );
 }
 
 export default App;
-

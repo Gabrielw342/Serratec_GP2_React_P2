@@ -1,0 +1,20 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.bubble {
+  width: 100%;
+  max-width: 600px;
+
+  padding: 10px 12px;
+
+  background-color: transparent;
+  color: #111;
+
+  border-radius: 12px;
+
+  text-align: left;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}

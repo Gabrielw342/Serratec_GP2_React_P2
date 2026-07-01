@@ -9,6 +9,8 @@ import BannerCategorias from "../../components/Banner/BannerCategoria";
 import styles from "./Home.module.css";
 import api from "../../services/api";
 
+import ChatBot from "../../components/ChatBot/ChatBot";
+
 // primeiro carousel
 import cozinhar from "../../assets/cozinhar.png";
 import descubra from "../../assets/descubra.png";
@@ -68,8 +70,8 @@ const categoriasHome = [
 
 // receita da equipe, passando o id da receita
 const selecaoEquipe = [
-  { receitaId: 7 }, 
-  { receitaId: 93 }, 
+  { receitaId: 7 },
+  { receitaId: 93 },
   { receitaId: 92 },
   { receitaId: 9 },
   { receitaId: 5 },
@@ -83,7 +85,7 @@ function Home() {
 
   const bannersHome = [cozinhar, descubra, inspire];
   const bannersUltimasReceitas = [lasanha, frango, bolo_de_chocolate];
-  
+
   useEffect(() => {
     api
       .get("/receitas/todas?page=1&limit=93")
@@ -95,13 +97,12 @@ function Home() {
       });
   }, []);
 
-    const receitasFiltradas = receitas.filter((receita) =>
+  const receitasFiltradas = receitas.filter((receita) =>
     receita.receita?.toLowerCase().includes(busca.toLowerCase())
-);
+  );
 
   return (
     <>
-
       {/* primeiro carousel */}
       <Carousel imagens={bannersHome} />
 
@@ -165,6 +166,8 @@ function Home() {
           ))}
         </div>
       </div>
+
+      <ChatBot />
     </>
   );
 }

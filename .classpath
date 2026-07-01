@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="node_modules/expo-modules-core/android/src/main/java"/>
+	<classpathentry kind="src" path="node_modules/react-native/ReactAndroid/src/main/java"/>
+	<classpathentry kind="src" path="saborrei-api/src/main/java"/>
+	<classpathentry kind="src" path="saborrei-api/src/test/java"/>
+	<classpathentry kind="lib" path="node_modules/@expo/dom-webview/local-maven-repo/expo/modules/webview/expo.modules.webview/56.0.5/expo.modules.webview-56.0.5-sources.jar"/>
+	<classpathentry kind="lib" path="node_modules/@react-native/gradle-plugin/gradle/wrapper/gradle-wrapper.jar"/>
+	<classpathentry kind="lib" path="node_modules/expo-asset/local-maven-repo/expo/modules/asset/expo.modules.asset/56.0.17/expo.modules.asset-56.0.17-sources.jar"/>
+	<classpathentry kind="lib" path="node_modules/expo-file-system/local-maven-repo/host/exp/exponent/expo.modules.filesystem/56.0.8/expo.modules.filesystem-56.0.8-sources.jar"/>
+	<classpathentry kind="lib" path="node_modules/expo-font/local-maven-repo/host/exp/exponent/expo.modules.font/56.0.7/expo.modules.font-56.0.7-sources.jar"/>
+	<classpathentry kind="lib" path="node_modules/expo-keep-awake/local-maven-repo/host/exp/exponent/expo.modules.keepawake/56.0.3/expo.modules.keepawake-56.0.3-sources.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

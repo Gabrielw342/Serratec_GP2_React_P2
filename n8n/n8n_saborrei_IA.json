@@ -1,0 +1,300 @@
+{
+  "name": "TRBL_IA",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "ia",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -720,
+        96
+      ],
+      "id": "a03f970d-8f2a-4e7f-9fd4-bf05e0922322",
+      "name": "Webhook",
+      "webhookId": "c987e9d1-398e-4bcd-817a-46507b2cace3"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.body.pergunta }}",
+        "options": {
+          "systemMessage": "<System>\nVocê é um assistente de um site de receitas culinárias.\nSEMPRE consulte a ferramenta de busca antes de responder qualquer pergunta.\nNunca responda sem antes buscar no banco de dados.\nCaso não ache informações no banco, procure em outros meios como a internet.\nNão responda perguntas fora do tema de receitas.\nA saída deve ser apenas texto simples sem nenhum comando de texto.\n</System>"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -512,
+        96
+      ],
+      "id": "eced64ec-6eb9-4914-a954-76f1a2fd1016",
+      "name": "AI Agent",
+      "executeOnce": false,
+      "retryOnFail": true
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.5-flash",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -512,
+        320
+      ],
+      "id": "9fd61814-c1ff-424a-b246-3659de7f1b0e",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "b2fqN9DHN4gOVbJj",
+          "name": "Gabriel Ecard 3"
+        }
+      },
+      "notes": "responda somente com: banana"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"resposta\": {{ $json.output.toJsonString()}}\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        -176,
+        96
+      ],
+      "id": "28f40afe-ec47-481c-8de0-14ed8e6593c4",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "url": "https://api-receitas-pi.vercel.app/receitas/todas?page=0&limit=93",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        96,
+        96
+      ],
+      "id": "bae6d346-8b2d-4270-9c08-b9e7217e978d",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "mode": "insert",
+        "tableName": "vetores",
+        "embeddingBatchSize": 93,
+        "options": {
+          "columnNames": {
+            "values": {}
+          }
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+      "typeVersion": 1.3,
+      "position": [
+        496,
+        96
+      ],
+      "id": "11dbff1e-6315-4592-9960-af2727094317",
+      "name": "Postgres PGVector Store1",
+      "credentials": {
+        "postgres": {
+          "id": "XhmTbtE5RYsrRMey",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolDescription": "System: você é um assistente chatbot de um site de receitas culinarias, você não pode responder mensagens que fujam do propósito do site.  Respostas que respondam sem deixar dúvidas e de facil intuição são melhores.",
+        "tableName": "vetores",
+        "topK": 20,
+        "includeDocumentMetadata": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePGVector",
+      "typeVersion": 1.3,
+      "position": [
+        -448,
+        448
+      ],
+      "id": "17c5687e-2ad9-4e8b-9ee6-a2898302ff5d",
+      "name": "Postgres PGVector Store",
+      "credentials": {
+        "postgres": {
+          "id": "XhmTbtE5RYsrRMey",
+          "name": "Postgres account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -288,
+        608
+      ],
+      "id": "89b4b646-13cc-4638-959f-ba2d87d6daef",
+      "name": "Embeddings Google Gemini",
+      "executeOnce": true,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "b2fqN9DHN4gOVbJj",
+          "name": "Gabriel Ecard 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const response = $input.first().json.items;\n\nreturn response\n    .filter(r => r.receita && r.tipo && r.ingredientes &&    r.modo_preparo)\n  .map(r => ({\n    json: {\n      text: [\n        `Receita: ${r.receita}`,\n        `Tipo: ${r.tipo}`,\n        `Ingredientes: ${r.ingredientes}`,\n        `Modo de Preparo: ${r.modo_preparo}`\n      ].join('\\n'),\n    }\n  }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        304,
+        96
+      ],
+      "id": "035e9794-0c19-452c-91ec-cfb63f84b613",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1.1,
+      "position": [
+        544,
+        304
+      ],
+      "id": "96c85828-8afb-4e6a-8795-45ac9daa083f",
+      "name": "Default Data Loader"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres PGVector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Postgres PGVector Store1",
+            "type": "ai_embedding",
+            "index": 0
+          },
+          {
+            "node": "Postgres PGVector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Postgres PGVector Store1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Postgres PGVector Store1",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Postgres PGVector Store1": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "0ae24aa8-ce2b-4803-a973-2a6aa33e57c2",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f62bf1b7a32e2dd0d6f2a0ed45718ad791370944dd425d1496eccc90df0413b0"
+  },
+  "nodeGroups": [],
+  "id": "q8PFuXxbp138vpVm",
+  "tags": []
+}

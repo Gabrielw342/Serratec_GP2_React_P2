@@ -1,0 +1,42 @@
+.container {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 15px;
+
+  overflow-y: auto;
+
+  color: #F9F5E6;
+}
+
+.userRow {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  animation: messageAppear 0.28s ease-out;
+}
+
+.botRow {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  animation: messageAppear 0.28s ease-out;
+}
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
