@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-import CardHorizontal from "../../components/Card/cardHorizontal";
+import CardHorizontal from "../../components/Card/CardHorizontal";
 import CardVertical from "../../components/Card/CardVertical";
 import Carousel from "../../components/Carousel/Carousel";
 import DivisaoTitulo from "../../components/DivisaoTitulo/DivisaoTitulo";
 import BannerCategorias from "../../components/Banner/BannerCategoria";
 
-import styles from "./Home.module.css";
+import styles from "./home.module.css";
 import api from "../../services/api";
 
 import ChatBot from "../../components/ChatBot/ChatBot";

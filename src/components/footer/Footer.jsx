@@ -1,7 +1,7 @@
 import styles from "./Footer.module.css";
-import logo from "../../assets/logoSRP2.png";
+import logo from "../../assets/LogoSRP2.png";
 
-import Logo from "../LogoSRP2/Logo";
+import Logo from "../logoSRP2/Logo";
 import FooterSocial from "./FooterSocial";
 
 function Footer() {
