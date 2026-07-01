@@ -5,7 +5,7 @@ const config = {
   //e so uma funcao de teste que eu cria pra mexer nos e poder testar os cards
   
   api: {
-    baseURL: "http://localhost:8080",
+  baseURL: "https://api-da-trabalho-ai-2.onrender.com",
     chatEndpoint: "/api/chat",
     timeout: 10000,
   },
